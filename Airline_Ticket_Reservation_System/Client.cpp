@@ -391,7 +391,7 @@ void Client::homePage() {
 
 void printTicket() {
 
-}
+]
 
 
 // Static members difinitions
@@ -405,5 +405,21 @@ std::vector <std::string> Client::toCountry;
 std::vector <std::string> Client::flightType; // Round-trip or One-way ticket
 std::vector <std::string> Client::plan;
 std::vector <int> Client::reservedSeats;
+
+
+cout << "\n**********************************\n";
+cout << "**               PHOENIX         **\n";
+cout << "**********************************\n";
+cout << " Name :           ID:           Phone Number:     " << "\n";
+
+cout << "   " << Client::name << "   " << Client::id << "   " << Client::phoneNum << "\n";
+
+cout << " FROM :             TO : " << "\n";
+
+cout << "    " << Client::fromCountry << "   " << Client::toCountry << "\n";
+
+cout << " Flight Type :         Plan :      Reserved Seats   " << "\n";
+cout << "   " << Client::flightType << "   " << Client::plan << "   " << Client::reservedSeats << "\n";
+
 
 
