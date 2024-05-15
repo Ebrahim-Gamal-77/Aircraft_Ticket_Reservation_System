@@ -1,5 +1,5 @@
 #include "Client.h"
-#include "Manger.h"
+#include "Manager.h"
 using namespace std;
 
 Client::Client()
