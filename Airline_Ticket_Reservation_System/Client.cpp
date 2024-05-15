@@ -410,7 +410,7 @@ std::vector <int> Client::reservedSeats;
 cout << "\n**********************************\n";
 cout << "**               PHOENIX         **\n";
 cout << "**********************************\n";
-cout << " Name :           ID:           Phone Number:     " << "\n";
+cout << " Name :           ID:            Phone Number:     " << "\n";
 
 cout << "   " << Client::name << "   " << Client::id << "   " << Client::phoneNum << "\n";
 
