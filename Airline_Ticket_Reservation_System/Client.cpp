@@ -414,7 +414,7 @@ cout << " Name :           ID:            Phone Number:     " << "\n";
 
 cout << "   " << Client::name << "   " << Client::id << "   " << Client::phoneNum << "\n";
 
-cout << " FROM :             TO : " << "\n";
+cout << " FROM :             TO :  " << "\n";
 
 cout << "    " << Client::fromCountry << "   " << Client::toCountry << "\n";
 
