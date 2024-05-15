@@ -274,7 +274,7 @@ void Client::setPlan()
 	    cout << "   *                               *     *                               *   " << endl;
 	    cout << "   *********************************     *********************************   " << endl << endl << endl;
 
-        cout << "Enter your Plan number : ";
+        cout << "Enter your Plan Number : ";
         cin >> PLAN;
         while (PLAN < 0 || PLAN > 4)
         {
@@ -365,7 +365,7 @@ void Client::homePage() {
 	std::cout << "================== PHOENIX AIRCRAFT TICKET RESERVATION SYSTEM ==================" << endl << endl;
 
 	// Taking homepage choices
-	std::cout << "1.Book a Ticket      2.Manger\n";
+	std::cout << "1.Book a Ticket      2.Manager\n";
 	std::cout << std::endl;
 	std::cout << "Your Choice: ";
 	short choice;
@@ -378,7 +378,7 @@ void Client::homePage() {
 			new Client();
 			break;
 		case 2:
-			new Manger();
+			new Manager();
 			break;
 
 		default:
