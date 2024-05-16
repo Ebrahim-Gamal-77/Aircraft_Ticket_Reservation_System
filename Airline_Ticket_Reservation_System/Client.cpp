@@ -201,90 +201,89 @@ void Client::setFlightType()
 
 void Client::setPlan()
 {
+	int PLAN;
+	int plan1 = 7500;
+	int plan2 = 10000;
+	int plan3 = 15000;
+	int plan4 = 25000;
 
-    int PLAN;
-    int plan1 = 7500;
-    int plan2 = 10000;
-    int plan3 = 15000;
-    int plan4 = 25000;
+	if (flightType.back() == "One-way")
+	{
+		cout << endl;
+		cout << "                 --> CHOOSE THE PLAN YOU WANT FOR ONE-WAY <--                 " << endl << endl << endl;
 
-    if (flightType.back() == "One-way")
-    {
-        cout << endl;
-        cout << "                 --> CHOOSE THE PLAN YOU WANT FOR ONE-WAY <--                 " << endl << endl << endl;
+		cout << "   *********************************     *********************************   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *           PLAN ( 1 )          *     *           PLAN ( 2 )          *   " << endl;
+		cout << "   *       { ECONOMY CLASS }       *     *   { PREMIUM ECONOMY CLASS }   *   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *    7,500 LE   --->   150 $    *     *    10,000 LE   --->   200 $   *   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *********************************     *********************************   " << endl << endl << endl;
 
-        cout << "   *********************************     *********************************   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *           PLAN ( 1 )          *     *           PLAN ( 2 )          *   " << endl;
-        cout << "   *       { ECONOMY CLASS }       *     *   { PREMIUM ECONOMY CLASS }   *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *    7,500 LE   --->   150 $    *     *    10,000 LE   --->   200 $   *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *********************************     *********************************   " << endl << endl << endl;
+		cout << "   *********************************     *********************************   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *           PLAN ( 3 )          *     *           PLAN ( 4 )          *   " << endl;
+		cout << "   *      { BUSINESS CLASS }       *     *        { FIRST CLASS }        *   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *    15,000 LE   --->   300 $   *     *    25,000 LE  --->   500 $    *   " << endl;
+		cout << "   *                               *     *                               *   " << endl;
+		cout << "   *********************************     *********************************   " << endl << endl << endl;
 
-        cout << "   *********************************     *********************************   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *           PLAN ( 3 )          *     *           PLAN ( 4 )          *   " << endl;
-        cout << "   *      { BUSINESS CLASS }       *     *        { FIRST CLASS }        *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *    15,000 LE   --->   300 $   *     *    25,000 LE  --->   500 $    *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *********************************     *********************************   " << endl << endl << endl;
+		cout << "Enter your Plan number : ";
+		cin >> PLAN;
+		while (PLAN < 0 || PLAN > 4)
+		{
+			cout << "Invalid number, Enter your plan number again : ";
+			cin >> PLAN;
+		}
 
-        cout << "Enter your Plan number : ";
-        cin >> PLAN;
-        while (PLAN < 0 || PLAN > 4)
-        {
-            cout << "Invalid number, Enter your plan number again : ";
-            cin >> PLAN;
-        }
-
-        switch (PLAN)
-        {
-        case 1:
-            this->planType.push_back("ECONOMY CLASS");
-            this->planPrice.push_back(7500);
-            cout << endl << "{ ECONOMY CLASS } The price is : " << plan1 << " LE" << endl;
-            break;
-        case 2:
-            this->planType.push_back("PREMIUM ECONOMY CLASS");
-            this->planPrice.push_back(10000);
-            cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 << " LE" << endl;
-            break;
-        case 3:
-            this->planType.push_back("BUSINESS CLASS");
-            this->planPrice.push_back(15000);
-            cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
-            break;
-        case 4:
-            this->planType.push_back("PREMIUM ECONOMY CLASS");
-            this->planPrice.push_back(25000);
-            cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 << " LE" << endl;
-            break;
-        }
-    }
-    else if (flightType.back() == "Round-trip")
-    {
-        cout << endl;
-        cout << "                 --> CHOOSE THE PLAN YOU WANT FOR ROUND-TRIP <--                 " << endl << endl << endl;
-        
-        cout << "   *********************************     *********************************   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *           PLAN ( 1 )          *     *           PLAN ( 2 )          *   " << endl;
-        cout << "   *       { ECONOMY CLASS }       *     *   { PREMIUM ECONOMY CLASS }   *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *    15,000 LE   --->   300 $   *     *    20,000 LE   --->   400 $   *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *********************************     *********************************   " << endl << endl << endl;
-        
-        cout << "   *********************************     *********************************   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *           PLAN ( 3 )          *     *           PLAN ( 4 )          *   " << endl;
-        cout << "   *      { BUSINESS CLASS }       *     *        { FIRST CLASS }        *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *    30,000 LE   --->   600 $   *     *    50,000 LE  --->  1,000 $   *   " << endl;
-        cout << "   *                               *     *                               *   " << endl;
-        cout << "   *********************************     *********************************   " << endl << endl << endl;
+		switch (PLAN)
+		{
+		case 1:
+			this->planType.push_back("ECONOMY CLASS");
+			this->planPrice.push_back(7500);
+			cout << endl << "{ ECONOMY CLASS } The price is : " << plan1 << " LE" << endl;
+			break;
+		case 2:
+			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planPrice.push_back(10000);
+			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 << " LE" << endl;
+			break;
+		case 3:
+			this->planType.push_back("BUSINESS CLASS");
+			this->planPrice.push_back(15000);
+			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
+			break;
+		case 4:
+			this->planType.push_back("FIRST CLASS");
+			this->planPrice.push_back(25000);
+			cout << endl << "{ FIRST CLASS } The price is : " << plan4 << " LE" << endl;
+			break;
+		}
+	}
+	else if (flightType.back() == "Round-trip")
+	{
+		cout << endl;
+	    cout << "                 --> CHOOSE THE PLAN YOU WANT FOR ROUND-TRIP <--                 " << endl << endl << endl;
+	    
+	    cout << "   *********************************     *********************************   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *           PLAN ( 1 )          *     *           PLAN ( 2 )          *   " << endl;
+	    cout << "   *       { ECONOMY CLASS }       *     *   { PREMIUM ECONOMY CLASS }   *   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *    15,000 LE   --->   300 $   *     *    20,000 LE   --->   400 $   *   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *********************************     *********************************   " << endl << endl << endl;
+	    
+	    cout << "   *********************************     *********************************   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *           PLAN ( 3 )          *     *           PLAN ( 4 )          *   " << endl;
+	    cout << "   *      { BUSINESS CLASS }       *     *        { FIRST CLASS }        *   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *    30,000 LE   --->   600 $   *     *    50,000 LE  --->  1,000 $   *   " << endl;
+	    cout << "   *                               *     *                               *   " << endl;
+	    cout << "   *********************************     *********************************   " << endl << endl << endl;
 
         cout << "Enter your Plan Number : ";
         cin >> PLAN;
@@ -312,14 +311,12 @@ void Client::setPlan()
             cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
             break;
         case 4:
-            this->planType.push_back("PREMIUM ECONOMY CLASS");
-            this->planPrice.push_back(50000);
-            cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 * 2 << " LE" << endl;
+			      this->planType.push_back("FIRST CLASS");
+			      this->planPrice.push_back(50000);
+			      cout << endl << "{ FIRST CLASS } The price is : " << plan4 * 2 << " LE" << endl;
             break;
-
         }
     }
-    
 }
 
 void Client::chooseSeatPosition()
@@ -429,13 +426,66 @@ void Client::printTicket() {
 
 // Static members Declaration
 int Client::seatsNum = 0;
-std::vector <std::string> Client::name;
-std::vector <std::string> Client::id;
-std::vector <std::string> Client::phoneNum;
-std::vector <std::string> Client::fromCountry;
-std::vector <std::string> Client::toCountry;
-std::vector <std::string> Client::flightType; // Round-trip or One-way ticket
-std::vector <std::string> Client::planType;
-std::vector <int> Client::planPrice;
-std::vector <int> Client::reservedSeats;
+std::vector <std::string> Client::name = {
+	"Ebrahim",
+	"Yosef",
+	"Mahmoud",
+	"Ahmed"
+};
+
+std::vector <std::string> Client::id = {
+	"30412011100997",
+	"30509191203652",
+	"30512121500375",
+	"30501051201918"
+};
+
+std::vector <std::string> Client::phoneNum = {
+	"01023970103",
+	"01140772593",
+	"01060063308",
+	"01018001401"
+};
+
+std::vector <std::string> Client::fromCountry = {
+	"Emirates",
+	"Egypt",
+	"America",
+	"China"
+};
+
+std::vector <std::string> Client::toCountry = {
+	"Germany",
+	"Saudi Arabia",
+	"England",
+	"Russia"
+};
+
+std::vector <std::string> Client::flightType = {
+	"One-way",
+	"One-way",
+	"One-way",
+	"Round-trip"
+};
+
+std::vector <std::string> Client::planType = {
+	"ECONOMY CLASS",
+	"PREMIUM ECONOMY CLASS",
+	"BUSINESS CLASS",
+	"FIRST CLASS"
+};
+
+std::vector <int> Client::planPrice = {
+	7500,
+	10000,
+	15000,
+	50000
+};
+
+std::vector <int> Client::reservedSeats = {
+	3,
+	12,
+	9,
+	5
+};
 
