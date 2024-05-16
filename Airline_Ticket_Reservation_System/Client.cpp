@@ -19,6 +19,7 @@ Client::Client()
 		setFlightType();
 		setPlan();
 		chooseSeatPosition();
+		printTicket();
 
 
 	}
@@ -52,7 +53,7 @@ void Client::setName()
 	std::cout << "Enter your name : ";
 	std::string name;
 	std::cin >> name;
-	this->id.push_back(name);
+	this->name.push_back(name);
 }
 
 void Client::setID()
@@ -68,7 +69,7 @@ void Client::setPhoneNum()
 	std::cout << "Enter your phone number : ";
 	std::string phoneNum;
 	std::cin >> phoneNum;
-	this->id.push_back(phoneNum);
+	this->phoneNum.push_back(phoneNum);
 }
 
 void Client::setFromCountry()
@@ -389,7 +390,17 @@ void Client::homePage() {
 
 }
 
-void printTicket() {
+void Client::printTicket() {
+
+	cout << "\n**********************************\n";
+	cout << "** PHOENIX **\n";
+	cout << "**********************************\n";
+	cout << " Name : ID: Phone Number: " << "\n";
+	cout << " " << name.back() << " " << id.back() << " " << phoneNum.back() << "\n";
+	cout << " FROM : TO : " << "\n";
+	cout << " " << fromCountry.back() << " " << toCountry.back() << "\n";
+	cout << " Flight Type : Plan : " << "\n";
+	cout << " " << flightType.back() << " " << plan.back() << "\n";
 
 }
 

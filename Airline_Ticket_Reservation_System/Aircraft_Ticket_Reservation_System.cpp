@@ -4,11 +4,14 @@
 #include "Manger.h"
 
 
+
 int main()
 {
 
 	std::cout << "==================================== WELCOME ===================================\n\n";
 	Client::homePage();
+
+	
 	
 	
 }
