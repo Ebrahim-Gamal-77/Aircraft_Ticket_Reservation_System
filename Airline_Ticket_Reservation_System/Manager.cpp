@@ -68,7 +68,18 @@ void Manager::printClientsData()
 // Yosef work
 void Manager::printIncome()
 {
+	int totalPrice = 0;
 
+	cout << "|          Name               |          Price               |" << endl << endl;
+	for (int j = 0; j < name.size(); j++)
+	{
+	    cout << "|   " << name.at(j) << "               " << "|   " << planPrice.at(j) << "               " << endl;
+	
+	    totalPrice += planPrice.at(j);
+	}
+
+	cout << endl << "The total income today is : " << totalPrice << " LE" << endl << endl;
+	cout << "==================================== PHOENIX ====================================";
 
 }
 
