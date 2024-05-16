@@ -27,7 +27,7 @@ protected:
 
 public:
 	
-	Client(); // Constractor
+	Client(); // Constructor
 
 	// Home Page
 	static void homePage();

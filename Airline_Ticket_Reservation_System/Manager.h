@@ -1,6 +1,7 @@
 #pragma once
-#include<iostream>
-class Manger
+#include <iostream>
+#include <vector>
+class Manager : public Client
 {
 
 private:
@@ -10,7 +11,7 @@ private:
 	void search(std::string name);
 
 public:
-	Manger();
+	Manager();
 
 };
 
