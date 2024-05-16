@@ -20,9 +20,9 @@ protected:
 	static std::vector <std::string> fromCountry;
 	static std::vector <std::string> toCountry;
 	static std::vector <std::string> flightType; // Round-trip or One-way ticket
-	static std::vector <std::string> plan;
+	static std::vector <std::string> planType;
+	static std::vector <int> planPrice;
 	static std::vector <int> reservedSeats;
-
 	
 
 public:

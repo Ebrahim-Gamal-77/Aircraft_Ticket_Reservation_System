@@ -199,7 +199,9 @@ void Client::setFlightType()
 
 void Client::setPlan()
 {
-	int Price;
+	int price;
+
+
 	int PLAN;
 	int plan1 = 7500;
 	int plan2 = 10000;
@@ -241,22 +243,26 @@ void Client::setPlan()
 		{
 		case 1:
 			PLAN = plan1;
-			this->plan.push_back("ECONOMY CLASS");
+			this->planType.push_back("ECONOMY CLASS");
+			this->planPrice.push_back(7500);
 			cout << endl << "{ ECONOMY CLASS } The price is : " << plan1 << " LE" << endl;
 			break;
 		case 2:
 			PLAN = plan2;
-			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planPrice.push_back(10000);
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 << " LE" << endl;
 			break;
 		case 3:
 			PLAN = plan3;
-			this->plan.push_back("BUSINESS CLASS");
+			this->planType.push_back("BUSINESS CLASS");
+			this->planPrice.push_back(15000);
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
 			break;
 		case 4:
 			PLAN = plan4;
-			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planPrice.push_back(25000);
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 << " LE" << endl;
 			break;
 		}
@@ -296,22 +302,26 @@ void Client::setPlan()
         {
         case 1:
             PLAN = plan1;
-			this->plan.push_back("ECONOMY CLASS");
+			this->planType.push_back("ECONOMY CLASS");
+			this->planPrice.push_back(15000);
 			cout << endl <<"{ ECONOMY CLASS } The price is : " << plan1 * 2 << " LE" << endl;
             break;
         case 2:
             PLAN = plan2;
-			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planPrice.push_back(20000);
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 * 2 << " LE" << endl;
             break;
         case 3:
             PLAN = plan3;
-			this->plan.push_back("BUSINESS CLASS");
+			this->planType.push_back("BUSINESS CLASS");
+			this->planPrice.push_back(30000);
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
             break;
         case 4:
             PLAN = plan4;
-			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planPrice.push_back(50000);
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 * 2 << " LE" << endl;
             break;
 
@@ -420,6 +430,7 @@ std::vector <std::string> Client::phoneNum;
 std::vector <std::string> Client::fromCountry;
 std::vector <std::string> Client::toCountry;
 std::vector <std::string> Client::flightType; // Round-trip or One-way ticket
-std::vector <std::string> Client::plan;
+std::vector <std::string> Client::planType;
+std::vector <int> Client::planPrice;
 std::vector <int> Client::reservedSeats;
 
