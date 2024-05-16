@@ -199,7 +199,8 @@ void Client::setFlightType()
 
 void Client::setPlan()
 {
-      int PLAN;
+	int Price;
+	int PLAN;
 	int plan1 = 7500;
 	int plan2 = 10000;
 	int plan3 = 15000;
@@ -400,15 +401,12 @@ void Client::homePage() {
 
 void Client::printTicket() {
 
-	cout << "\n**********************************\n";
-	cout << "** PHOENIX **\n";
-	cout << "**********************************\n";
-	cout << " Name : ID: Phone Number: " << "\n";
-	cout << " " << name.back() << " " << id.back() << " " << phoneNum.back() << "\n";
-	cout << " FROM : TO : " << "\n";
-	cout << " " << fromCountry.back() << " " << toCountry.back() << "\n";
-	cout << " Flight Type : Plan : " << "\n";
-	cout << " " << flightType.back() << " " << plan.back() << "\n";
+	cout << "\n***********************************************************************************************************************\n";
+	cout << "**                                                       PHOENIX                                                       **";
+	cout << "\n***********************************************************************************************************************\n";
+	cout << "Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back() << endl << endl;
+	cout << "FROM : " << fromCountry.back() << "     " << "TO : " << toCountry.back() << endl << endl;
+	cout << "Flight Type : " << flightType.back() << "     " << "Plan type: " << plan.back() << "Plan price: " << "" << endl << endl;
 
 }
 
