@@ -129,18 +129,15 @@ cout << "Flight Type: " << flightType.at(clientIndex)
 // Ahmed work
 void Manager::PrintAllData()
 {
-	/*
-	cout << "FullName* : " << name << "             |" << " ID* : " << id << "             |" << " Phone Number* :  " << phoneNum << " |" << "\n";
-	cout << "\n==================================== PHOENIX ====================================\n\n";
-	cout << "From " << fromCountry << "\t\t\t\t\t\t\t\t\t" << " To " << toCountry << "\n";
-	cout << "\n==================================== PHOENIX ====================================\n\n";
-	cout << "Chosen Flight Type Is : " << flightType << "\t\t\t\t" << "Chosen Plan Is : " << plan << "\n";
-	cout << "\n==================================== PHOENIX ====================================\n\n";
-	*/
+	for (int i = 0; i < name.size(); i++) {
+		cout << "Name: " << name.at(i) << "	 			|				" << "ID: " << id.at(i) << "	 			|				" << "Phone Number: " << phoneNum.at(i) << "\n";
+		cout << "\n==================================== PHOENIX ====================================\n";
+		cout << "From: " << fromCountry.at(i) << "	 			|				" << "To: " << toCountry.at(i) << "	 			|				" << "Phone Number: " << flightType.at(i) << "\n";
+		cout << "From: " << planType.at(i) << "	 			|				" << "To: " << planPrice.at(i) << "	 			|\n";
+		cout << "\n==================================== PHOENIX ====================================\n";
+	}
 }
-
-
-// Yosef work
+	// Yosef work
 void Manager::printIncome()
 {
 	int totalPrice = 0;
