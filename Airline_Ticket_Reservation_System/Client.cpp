@@ -401,12 +401,13 @@ void Client::homePage() {
 
 void Client::printTicket() {
 
-	cout << "\n***********************************************************************************************************************\n";
-	cout << "**                                                       PHOENIX                                                       **";
-	cout << "\n***********************************************************************************************************************\n";
-	cout << "Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back() << endl << endl;
-	cout << "FROM : " << fromCountry.back() << "     " << "TO : " << toCountry.back() << endl << endl;
-	cout << "Flight Type : " << flightType.back() << "     " << "Plan type: " << plan.back() << "Plan price: " << "" << endl << endl;
+	cout << "******************************************************************************************************************" << endl;
+	cout << "*                                               << PHOENIX TICKET >>                                             *" << endl;
+	cout << "******************************************************************************************************************" << endl << endl;
+	cout << "*  Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back() << endl << endl;
+	cout << "*  FROM : " << fromCountry.back() << "     " << "TO : " << toCountry.back() << "     " << "Seat number: " << reservedSeats.back() << endl << endl;
+	cout << "*  Flight Type : " << flightType.back() << "     " << "Plan type: " << plan.back() << "     " << "Plan price: " << "" << endl << endl;
+	cout << "******************************************************************************************************************" << endl;
 
 }
 
