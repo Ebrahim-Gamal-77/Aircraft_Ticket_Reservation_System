@@ -11,7 +11,8 @@ public:
 
 private:
 	void showManagerPage();
-	void printClientsData();
+	void printClientData(int clientIndex);
+	void PrintAllData();
 	void printIncome();
 	void printReservedSeats();
 	void searchForClient();
