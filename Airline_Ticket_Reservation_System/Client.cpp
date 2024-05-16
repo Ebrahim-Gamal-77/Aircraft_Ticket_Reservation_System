@@ -257,9 +257,9 @@ void Client::setPlan()
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
 			break;
 		case 4:
-			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("FIRST CLASS");
 			this->planPrice.push_back(25000);
-			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 << " LE" << endl;
+			cout << endl << "{ FIRST CLASS } The price is : " << plan4 << " LE" << endl;
 			break;
 		}
 	}
@@ -312,9 +312,9 @@ void Client::setPlan()
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
             break;
         case 4:
-			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planType.push_back("FIRST CLASS");
 			this->planPrice.push_back(50000);
-			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 * 2 << " LE" << endl;
+			cout << endl << "{ FIRST CLASS } The price is : " << plan4 * 2 << " LE" << endl;
             break;
 
         }
@@ -429,13 +429,66 @@ void Client::printTicket() {
 
 // Static members Declaration
 int Client::seatsNum = 0;
-std::vector <std::string> Client::name;
-std::vector <std::string> Client::id;
-std::vector <std::string> Client::phoneNum;
-std::vector <std::string> Client::fromCountry;
-std::vector <std::string> Client::toCountry;
-std::vector <std::string> Client::flightType; // Round-trip or One-way ticket
-std::vector <std::string> Client::planType;
-std::vector <int> Client::planPrice;
-std::vector <int> Client::reservedSeats;
+std::vector <std::string> Client::name = {
+	"Ebrahim",
+	"Yosef",
+	"Mahmoud",
+	"Ahmed"
+};
+
+std::vector <std::string> Client::id = {
+	"30412011100997",
+	"30509191203652",
+	"30512121500375",
+	"30501051201918"
+};
+
+std::vector <std::string> Client::phoneNum = {
+	"01023970103",
+	"01140772593",
+	"01060063308",
+	"01018001401"
+};
+
+std::vector <std::string> Client::fromCountry = {
+	"Emirates",
+	"Egypt",
+	"America",
+	"China"
+};
+
+std::vector <std::string> Client::toCountry = {
+	"Germany",
+	"Saudi Arabia",
+	"England",
+	"Russia"
+};
+
+std::vector <std::string> Client::flightType = {
+	"One-way",
+	"One-way",
+	"One-way",
+	"Round-trip"
+};
+
+std::vector <std::string> Client::planType = {
+	"ECONOMY CLASS",
+	"PREMIUM ECONOMY CLASS",
+	"BUSINESS CLASS",
+	"FIRST CLASS"
+};
+
+std::vector <int> Client::planPrice = {
+	7500,
+	10000,
+	15000,
+	50000
+};
+
+std::vector <int> Client::reservedSeats = {
+	3,
+	12,
+	9,
+	5
+};
 
