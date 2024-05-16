@@ -1,8 +1,6 @@
-
 #include <iostream>
 #include "Client.h"
-#include "Manger.h"
-
+#include "Manager.h"
 
 
 int main()
@@ -10,9 +8,6 @@ int main()
 
 	std::cout << "==================================== WELCOME ===================================\n\n";
 	Client::homePage();
-
-	
-	
 	
 }
 

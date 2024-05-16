@@ -4,14 +4,17 @@
 class Manager : public Client
 {
 
-private:
-	void printOverall();
-	void printIncome();
-	void printReservedChairs();
-	void search(std::string name);
-
 public:
 	Manager();
+	Manager(bool showData);
+
+
+private:
+	void printClientsData();
+	void printIncome();
+	void printReservedSeats();
+	void searchForClient();
+
+
 
 };
-

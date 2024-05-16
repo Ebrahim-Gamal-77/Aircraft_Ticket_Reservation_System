@@ -134,11 +134,11 @@
   <ItemGroup>
     <ClCompile Include="Aircraft_Ticket_Reservation_System.cpp" />
     <ClCompile Include="Client.cpp" />
-    <ClCompile Include="Manger.cpp" />
+    <ClCompile Include="Manager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h" />
-    <ClInclude Include="Manger.h" />
+    <ClInclude Include="Manager.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

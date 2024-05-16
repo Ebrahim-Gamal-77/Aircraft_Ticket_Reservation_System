@@ -27,7 +27,9 @@ protected:
 
 public:
 	
-	Client(); // Constructor
+	// Constructors
+	Client();
+	Client(bool takeData);
 
 	// Home Page
 	static void homePage();

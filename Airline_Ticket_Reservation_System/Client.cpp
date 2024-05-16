@@ -2,31 +2,33 @@
 #include "Manager.h"
 using namespace std;
 
-Client::Client()
-{
-	std::cout << "==================================== PHOENIX ====================================\n\n";
+Client::Client() {}
 
-	int seatsNum = chooseSeatsNum();
+Client::Client(bool takeData) {
 
-	for (int i = 0; i < seatsNum; i++)
-	{
-		setName();
-		setID();
-		setPhoneNum();
-		std::cout << "\n==================================== PHOENIX ====================================\n";
-		setFromCountry();
-		setToCountry();
-		setFlightType();
-		setPlan();
-		chooseSeatPosition();
-		printTicket();
+	if (takeData) {
+		std::cout << "==================================== PHOENIX ====================================\n\n";
+
+		int seatsNum = chooseSeatsNum();
+
+		for (int i = 0; i < seatsNum; i++)
+		{
+			setName();
+			setID();
+			setPhoneNum();
+			std::cout << "\n==================================== PHOENIX ====================================\n";
+			setFromCountry();
+			setToCountry();
+			setFlightType();
+			setPlan();
+			chooseSeatPosition();
+			printTicket();
 
 
+		}
 	}
 
 }
-
-
 
 int Client::chooseSeatsNum()
 {
@@ -366,8 +368,7 @@ void Client::homePage() {
 	std::cout << "================== PHOENIX AIRCRAFT TICKET RESERVATION SYSTEM ==================" << endl << endl;
 
 	// Taking homepage choices
-	std::cout << "1.Book a Ticket      2.Manager\n";
-	std::cout << std::endl;
+	std::cout << "1.Book a Ticket      2.Manager\n\n";
 	std::cout << "Your Choice: ";
 	short choice;
 	do {
@@ -376,15 +377,15 @@ void Client::homePage() {
 		switch (choice)
 		{
 		case 1:
-			new Client();
+			new Client(true);
 			break;
 		case 2:
-			new Manager();
+			new Manager(true);
 			break;
 
 		default:
 			std::cout << "Invalid number!\n";
-			std::cout << "Choose a number between (1,2) : ";
+			std::cout << "Choose a number between (1-2) : ";
 		}
 	} while (choice < 1 || choice > 2);
 
@@ -402,11 +403,10 @@ void Client::printTicket() {
 	cout << " Flight Type : Plan : " << "\n";
 	cout << " " << flightType.back() << " " << plan.back() << "\n";
 
-]
+}
 
 
-// Static members difinitions
-
+// Static members Declaration
 int Client::seatsNum = 0;
 std::vector <std::string> Client::name;
 std::vector <std::string> Client::id;
@@ -416,21 +416,4 @@ std::vector <std::string> Client::toCountry;
 std::vector <std::string> Client::flightType; // Round-trip or One-way ticket
 std::vector <std::string> Client::plan;
 std::vector <int> Client::reservedSeats;
-
-
-cout << "\n**********************************\n";
-cout << "**               PHOENIX         **\n";
-cout << "**********************************\n";
-cout << " Name :           ID:            Phone Number:     " << "\n";
-
-cout << "   " << Client::name << "   " << Client::id << "   " << Client::phoneNum << "\n";
-
-cout << " FROM :             TO :  " << "\n";
-
-cout << "    " << Client::fromCountry << "   " << Client::toCountry << "\n";
-
-cout << " Flight Type :         Plan :      Reserved Seats   " << "\n";
-cout << "   " << Client::flightType << "   " << Client::plan << "   " << Client::reservedSeats << "\n";
-
-
 
