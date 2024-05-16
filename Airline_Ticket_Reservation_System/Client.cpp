@@ -1,3 +1,5 @@
+#include <iostream>
+#include <string>
 #include "Client.h"
 #include "Manager.h"
 using namespace std;
@@ -26,10 +28,10 @@ Client::Client(bool takeData) {
 			setPlan();
 			chooseSeatPosition();
 			printTicket();
-
-
 		}
 	}
+
+	Client::homePage();
 
 }
 
@@ -404,10 +406,25 @@ void Client::printTicket() {
 	cout << "******************************************************************************************************************" << endl;
 	cout << "*                                               << PHOENIX TICKET >>                                             *" << endl;
 	cout << "******************************************************************************************************************" << endl << endl;
-	cout << "*  Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back() << endl << endl;
-	cout << "*  FROM : " << fromCountry.back() << "     " << "TO : " << toCountry.back() << "     " << "Seat number: " << reservedSeats.back() << endl << endl;
-	cout << "*  Flight Type : " << flightType.back() << "     " << "Plan type: " << planType.back() << "     " << "Plan price: " << planPrice.back() << endl << endl;
-	cout << "******************************************************************************************************************" << endl;
+	cout << "*  Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back();
+	for (int i = 0; i < 74 - (name.back().length() + id.back().length() + phoneNum.back().length()); i++)
+	{
+		cout << ' ';
+	}
+	cout << '*' << endl << endl;
+	cout << "*  From : " << fromCountry.back() << "     " << "To : " << toCountry.back() << "     " << "Seat Number: " << reservedSeats.back();
+	for (int i = 0; i < 75 - (fromCountry.back().length() + toCountry.back().length() + to_string(reservedSeats.back()).length()); i++)
+	{
+		cout << ' ';
+	}
+	cout << '*' << endl << endl;
+	cout << "*  Flight Type : " << flightType.back() << "     " << "Plan Type: " << planType.back() << "     " << "Plan Price: " << planPrice.back();
+	for (int i = 0; i < 63 - (flightType.back().length() + planType.back().length() + to_string(planPrice.back()).length()); i++)
+	{
+		cout << ' ';
+	}
+	cout << '*' << endl << endl;
+	cout << "******************************************************************************************************************" << endl << endl;
 
 }
 
