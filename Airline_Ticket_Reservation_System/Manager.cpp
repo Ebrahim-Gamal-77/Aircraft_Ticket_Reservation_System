@@ -6,6 +6,7 @@ using namespace std;
 
 Manager::Manager() {}
 
+// Ebrahim work
 Manager::Manager(bool showData) {
 
 	std::cout << "================================ PHOENIX MANAGER ================================\n\n";
@@ -42,7 +43,15 @@ Manager::Manager(bool showData) {
 
 }
 
+void Manager::showManagerPage() {
 
+}
+
+void Manager::searchForClient()
+{
+}
+
+// Ahmed work
 void Manager::printClientsData()
 {
 	/*
@@ -55,10 +64,8 @@ void Manager::printClientsData()
 	*/
 }
 
-void Manager::searchForClient()
-{
-}
 
+// Yosef work
 void Manager::printIncome()
 {
 

@@ -10,11 +10,10 @@ public:
 
 
 private:
+	void showManagerPage();
 	void printClientsData();
 	void printIncome();
 	void printReservedSeats();
 	void searchForClient();
-
-
 
 };
