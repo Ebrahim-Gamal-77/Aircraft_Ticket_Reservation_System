@@ -322,8 +322,6 @@ void Client::setPlan()
 	
 }
 
-
-// I need to make seats exeption for reserved positions
 void Client::chooseSeatPosition()
 {
 	int seatPosition;

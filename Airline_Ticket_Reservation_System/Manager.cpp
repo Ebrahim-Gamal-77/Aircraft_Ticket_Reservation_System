@@ -55,6 +55,10 @@ void Manager::printClientsData()
 	*/
 }
 
+void Manager::searchForClient()
+{
+}
+
 void Manager::printIncome()
 {
 
@@ -68,6 +72,4 @@ void Manager::printReservedSeats()
 
 }
 
-void Manager::searchForClient()
-{
-}
+
