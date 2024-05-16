@@ -416,7 +416,7 @@ void Client::printTicket() {
 	cout << "******************************************************************************************************************" << endl << endl;
 	cout << "*  Name : " << name.back() << "     " << "ID: " << id.back() << "     " << "Phone Number : " << phoneNum.back() << endl << endl;
 	cout << "*  FROM : " << fromCountry.back() << "     " << "TO : " << toCountry.back() << "     " << "Seat number: " << reservedSeats.back() << endl << endl;
-	cout << "*  Flight Type : " << flightType.back() << "     " << "Plan type: " << plan.back() << "     " << "Plan price: " << "" << endl << endl;
+	cout << "*  Flight Type : " << flightType.back() << "     " << "Plan type: " << planType.back() << "     " << "Plan price: " << "" << endl << endl;
 	cout << "******************************************************************************************************************" << endl;
 
 }
