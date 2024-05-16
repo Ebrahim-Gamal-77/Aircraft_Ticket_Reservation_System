@@ -7,12 +7,15 @@ Client::Client() {}
 Client::Client(bool takeData) {
 
 	if (takeData) {
-		std::cout << "==================================== PHOENIX ====================================\n\n";
+		std::cout << "================================ PHOENIX CLIENT ================================\n\n";
 
 		int seatsNum = chooseSeatsNum();
-
+		std::cout << "We will collect your data for the flight\n";
 		for (int i = 0; i < seatsNum; i++)
 		{
+			if (seatsNum > 1) {
+				std::cout << "Taking data from #" << i + 1 << " Client\n";
+			}
 			setName();
 			setID();
 			setPhoneNum();
@@ -32,19 +35,22 @@ Client::Client(bool takeData) {
 
 int Client::chooseSeatsNum()
 {
-	std::cout << "How many seats will you take: ";
 	int numOfSeats;
 	do
 	{
+		std::cout << "How many seats will you take or (-1) to back: ";
 		std::cin >> numOfSeats;
 		std::cout << '\n';
-		if (numOfSeats < 1 || numOfSeats > 16) {
-			std::cout << "You should choose a number between (1-16): ";
+		if (numOfSeats == -1) {
+			Client::homePage();
+		}
+		else if (numOfSeats < 1 || numOfSeats > 16) {
+			std::cout << "You just can take from 1 to 16 seat\n";
 		}
 		else {
 			this->seatsNum += numOfSeats;
 		}
-	} while (numOfSeats < 1 || numOfSeats > 16);
+	} while (numOfSeats != -1 && (numOfSeats < 1 || numOfSeats > 16));
 
 	return numOfSeats;
 
@@ -234,23 +240,23 @@ void Client::setPlan()
 		{
 		case 1:
 			PLAN = plan1;
+			this->plan.push_back("ECONOMY CLASS");
 			cout << endl << "{ ECONOMY CLASS } The price is : " << plan1 << " LE" << endl;
 			break;
 		case 2:
 			PLAN = plan2;
+			this->plan.push_back("PREMIUM ECONOMY CLASS");
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 << " LE" << endl;
 			break;
 		case 3:
 			PLAN = plan3;
+			this->plan.push_back("BUSINESS CLASS");
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
 			break;
 		case 4:
 			PLAN = plan4;
+			this->plan.push_back("PREMIUM ECONOMY CLASS");
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 << " LE" << endl;
-			break;
-		default:
-			cout << "Invalid number, Please try a again" << endl;
-			cin >> PLAN;
 			break;
 		}
 	}
@@ -289,24 +295,25 @@ void Client::setPlan()
         {
         case 1:
             PLAN = plan1;
-            cout << endl <<"{ ECONOMY CLASS } The price is : " << plan1 * 2 << " LE" << endl;
+			this->plan.push_back("ECONOMY CLASS");
+			cout << endl <<"{ ECONOMY CLASS } The price is : " << plan1 * 2 << " LE" << endl;
             break;
         case 2:
             PLAN = plan2;
-            cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 * 2 << " LE" << endl;
+			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 * 2 << " LE" << endl;
             break;
         case 3:
             PLAN = plan3;
-            cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
+			this->plan.push_back("BUSINESS CLASS");
+			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
             break;
         case 4:
             PLAN = plan4;
-            cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 * 2 << " LE" << endl;
+			this->plan.push_back("PREMIUM ECONOMY CLASS");
+			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan4 * 2 << " LE" << endl;
             break;
-        default:
-            cout << "Invalid number, Please try a again" << endl;
-            cin >> PLAN;
-            break;
+
         }
 	}
 	
@@ -368,7 +375,7 @@ void Client::homePage() {
 	std::cout << "================== PHOENIX AIRCRAFT TICKET RESERVATION SYSTEM ==================" << endl << endl;
 
 	// Taking homepage choices
-	std::cout << "1.Book a Ticket      2.Manager\n\n";
+	std::cout << "1.Book a Ticket                       2.Manager\n\n";
 	std::cout << "Your Choice: ";
 	short choice;
 	do {

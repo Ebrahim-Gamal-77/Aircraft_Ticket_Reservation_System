@@ -8,6 +8,7 @@ Manager::Manager() {}
 
 Manager::Manager(bool showData) {
 
+	std::cout << "================================ PHOENIX MANAGER ================================\n\n";
 	std::cout << "1.Print all Clients data              2.Print all income\n";
 	std::cout << "3.Print reserved seats number         4.Search for a Client\n";
 	std::cout << "5.Back to Home page\n\n";
