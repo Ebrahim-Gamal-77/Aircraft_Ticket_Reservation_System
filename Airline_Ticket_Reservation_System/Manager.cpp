@@ -160,8 +160,18 @@ void Manager::printIncome()
 
 void Manager::printReservedSeats()
 {
-	cout << "The Number Of Reserved Chairs For Today Is :\t" << seatsNum << "\n";
+	int totalSeats = reservedSeats.size();
+	cout << endl << "The Number Of Reserved Chairs Is: " << endl << endl;
+	for (int i = 0; i < reservedSeats.size(); i++)
+	{
+		cout << "seat number : " << reservedSeats.at(i) << endl;
+	}
+	cout << endl << "The Number Of Reserved Chairs For Today Is :  " << totalSeats << "  Seats" << endl;
 	cout << "\n==================================== PHOENIX ====================================\n\n";
+
+	// cout << "The Number Of Reserved Chairs For Today Is :\t" << seatsNum << "\n";
+	// cout << "\n==================================== PHOENIX ====================================\n\n";
+
 
 }
 
