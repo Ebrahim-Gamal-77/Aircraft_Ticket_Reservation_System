@@ -5,6 +5,22 @@
 class Client
 {
 
+public:
+
+	struct FlightData
+	{
+		std::string name;
+		std::string id;
+		std::string phoneNum;
+		std::string fromCountry;
+		std::string toCountry;
+		std::string flightType; // Round-trip or One-way ticket
+		std::string planEconomy;
+		int planPrice;
+		int seatPosition;
+	};
+
+
 protected:
 
 	static int seatsNum;
@@ -20,10 +36,13 @@ protected:
 	static std::vector <std::string> fromCountry;
 	static std::vector <std::string> toCountry;
 	static std::vector <std::string> flightType; // Round-trip or One-way ticket
-	static std::vector <std::string> planType;
+	static std::vector <std::string> planEconomy;
 	static std::vector <int> planPrice;
-	static std::vector <int> reservedSeats;
+	static std::vector <int> seatsPosition;
 	
+	
+
+	static std::vector <FlightData> clientsData;
 
 public:
 	

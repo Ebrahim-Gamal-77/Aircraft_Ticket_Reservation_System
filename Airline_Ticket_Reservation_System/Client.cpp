@@ -241,22 +241,22 @@ void Client::setPlan()
 		switch (PLAN)
 		{
 		case 1:
-			this->planType.push_back("ECONOMY CLASS");
+			this->planEconomy.push_back("ECONOMY CLASS");
 			this->planPrice.push_back(7500);
 			cout << endl << "{ ECONOMY CLASS } The price is : " << plan1 << " LE" << endl;
 			break;
 		case 2:
-			this->planType.push_back("PREMIUM ECONOMY CLASS");
+			this->planEconomy.push_back("PREMIUM ECONOMY CLASS");
 			this->planPrice.push_back(10000);
 			cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 << " LE" << endl;
 			break;
 		case 3:
-			this->planType.push_back("BUSINESS CLASS");
+			this->planEconomy.push_back("BUSINESS CLASS");
 			this->planPrice.push_back(15000);
 			cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 << " LE" << endl;
 			break;
 		case 4:
-			this->planType.push_back("FIRST CLASS");
+			this->planEconomy.push_back("FIRST CLASS");
 			this->planPrice.push_back(25000);
 			cout << endl << "{ FIRST CLASS } The price is : " << plan4 << " LE" << endl;
 			break;
@@ -296,22 +296,22 @@ void Client::setPlan()
         switch (PLAN)
         {
         case 1:
-            this->planType.push_back("ECONOMY CLASS");
+            this->planEconomy.push_back("ECONOMY CLASS");
             this->planPrice.push_back(15000);
             cout << endl <<"{ ECONOMY CLASS } The price is : " << plan1 * 2 << " LE" << endl;
             break;
         case 2:
-            this->planType.push_back("PREMIUM ECONOMY CLASS");
+            this->planEconomy.push_back("PREMIUM ECONOMY CLASS");
             this->planPrice.push_back(20000);
             cout << endl << "{ PREMIUM ECONOMY CLASS } The price is : " << plan2 * 2 << " LE" << endl;
             break;
         case 3:
-            this->planType.push_back("BUSINESS CLASS");
+            this->planEconomy.push_back("BUSINESS CLASS");
             this->planPrice.push_back(30000);
             cout << endl << "{ BUSINESS CLASS } The price is : " << plan3 * 2 << " LE" << endl;
             break;
         case 4:
-			      this->planType.push_back("FIRST CLASS");
+			      this->planEconomy.push_back("FIRST CLASS");
 			      this->planPrice.push_back(50000);
 			      cout << endl << "{ FIRST CLASS } The price is : " << plan4 * 2 << " LE" << endl;
             break;
@@ -363,7 +363,7 @@ void Client::chooseSeatPosition()
         cout << "SORRY, INVALID SEAT NUMBER, TRY ENTER THE SEAT NUMBER AGAIN: ";
         cin >> seatPosition;
     }
-    this->reservedSeats.push_back(seatPosition);
+    this->seatsPosition.push_back(seatPosition);
     cout << "DONE, YOU HAVE BOOKED SEAT " << seatPosition << endl << endl;
     cout << "\n==================================== PHOENIX ====================================\n\n";
 }
@@ -407,14 +407,14 @@ void Client::printTicket() {
         cout << ' ';
     }
     cout << '*' << endl << endl;
-    cout << "*  From : " << fromCountry.back() << "     " << "To : " << toCountry.back() << "     " << "Seat Number: " << reservedSeats.back();
-    for (int i = 0; i < 75 - (fromCountry.back().length() + toCountry.back().length() + to_string(reservedSeats.back()).length()); i++)
+    cout << "*  From : " << fromCountry.back() << "     " << "To : " << toCountry.back() << "     " << "Seat Number: " << seatsPosition.back();
+    for (int i = 0; i < 75 - (fromCountry.back().length() + toCountry.back().length() + to_string(seatsPosition.back()).length()); i++)
     {
         cout << ' ';
     }
     cout << '*' << endl << endl;
-    cout << "*  Flight Type : " << flightType.back() << "     " << "Plan Type: " << planType.back() << "     " << "Plan Price: " << planPrice.back();
-    for (int i = 0; i < 63 - (flightType.back().length() + planType.back().length() + to_string(planPrice.back()).length()); i++)
+    cout << "*  Flight Type : " << flightType.back() << "     " << "Plan Economy: " << planEconomy.back() << "     " << "Plan Price: " << planPrice.back();
+    for (int i = 0; i < 63 - (flightType.back().length() + planEconomy.back().length() + to_string(planPrice.back()).length()); i++)
     {
         cout << ' ';
     }
@@ -426,6 +426,16 @@ void Client::printTicket() {
 
 // Static members Declaration
 int Client::seatsNum = 0;
+
+
+// These data needs to replace instead of discrete data
+std::vector <Client::FlightData> Client::clientsData = {
+    {"Ebraim", "30412011100997", "01023970103", "Emirates", "Germany", "One-way", "ECONOMY CLASS", 7500, 3},
+    {"Yosef", "30509191203652", "01140772593", "Egypt", "Saudi Arabia", "Round-trip", "PREMIUM ECONOMY CLASS", 10000, 12},
+    {"Mahmoud", "30512121500375", "01060063308", "America", "England", "One-way", "BUSINESS CLASS", 15000, 9},
+    {"Ahmed", "30501051201918", "01018001401", "China", "Russia", "Round-trip", "FIRST CLASS", 50000, 5}
+};
+
 std::vector <std::string> Client::name = {
 	"Ebrahim",
 	"Yosef",
@@ -463,12 +473,12 @@ std::vector <std::string> Client::toCountry = {
 
 std::vector <std::string> Client::flightType = {
 	"One-way",
-	"One-way",
+	"Round-trip",
 	"One-way",
 	"Round-trip"
 };
 
-std::vector <std::string> Client::planType = {
+std::vector <std::string> Client::planEconomy = {
 	"ECONOMY CLASS",
 	"PREMIUM ECONOMY CLASS",
 	"BUSINESS CLASS",
@@ -482,7 +492,7 @@ std::vector <int> Client::planPrice = {
 	50000
 };
 
-std::vector <int> Client::reservedSeats = {
+std::vector <int> Client::seatsPosition = {
 	3,
 	12,
 	9,

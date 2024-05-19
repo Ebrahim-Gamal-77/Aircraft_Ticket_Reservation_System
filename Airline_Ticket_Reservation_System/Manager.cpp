@@ -1,6 +1,7 @@
 #include "Client.h"
 #include "Manager.h"
 #include <vector>
+#include <string>
 using namespace std;
 
 
@@ -118,28 +119,76 @@ cout << "Name: " << name.at(clientIndex)
 
 cout << "From: " << fromCountry.at(clientIndex)
 << "\t" << "To: " << toCountry.at(clientIndex) 
-<< "\t" << "Seat Number: " << reservedSeats.at(clientIndex) << endl;
+<< "\t" << "Seat Number: " << seatsPosition.at(clientIndex) << endl;
 
 cout << "Flight Type: " << flightType.at(clientIndex)
-<< "\t" << "Plan Type: " << planType.at(clientIndex)
+<< "\t" << "Plan Type: " << planEconomy.at(clientIndex)
 << "\t" << "Plan Price: " << planPrice.at(clientIndex) << endl;
+
+std::cout << "\nPress any key to back ";
+std::string temp;
+std::cin >> temp;
+showManagerPage();
 
 }
 
 // Ahmed work
 void Manager::PrintAllData()
 {
+
+	// I have a problem here with spaces formatting ... The program gives me a runtime error even my logic is correct
 	for (int i = 0; i < name.size(); i++) {
-		cout << "Name: " << name.at(i) << "	 			|				" << "ID: " << id.at(i) << "	 			|				" << "Phone Number: " << phoneNum.at(i) << "\n";
-		cout << "\n==================================== PHOENIX ====================================\n";
-		cout << "From: " << fromCountry.at(i) << "	 			|				" << "To: " << toCountry.at(i) << "	 			|				" << "Phone Number: " << flightType.at(i) << "\n";
-		cout << "From: " << planType.at(i) << "	 			|				" << "To: " << planPrice.at(i) << "	 			|\n";
-		cout << "\n==================================== PHOENIX ====================================\n";
+		cout << "Client #" << i + 1 << endl;
+
+		cout << "Name: " << name.at(i);
+		// Example for the error
+		// <-------------------->
+		for (int i = 0; i < 25 - (name.at(i).length() + 5); i++)
+		{
+			cout << " ";
+		}
+		// <-------------------->
+		cout << "ID: " << id.at(i);
+		for (int i = 0; i < 25 - (id.at(i).length() + 4); i++)
+		{
+			cout << " ";
+		}
+		cout << "Phone Number: " << phoneNum.at(i) << endl;
+
+		cout << "From: " << fromCountry.at(i);
+		for (int i = 0; i < 25 - (fromCountry.at(i).length() + 6); i++)
+		{
+			cout << " ";
+		}
+		cout << "To: " << toCountry.at(i);
+		for (int i = 0; i < 25 - (toCountry.at(i).length() + 4); i++)
+		{
+			cout << " ";
+		}
+		cout << "Flight Type: " << flightType.at(i) << endl;
+
+		cout << "Plan Economy: " << planEconomy.at(i);
+		for (int i = 0; i < 35 - (planEconomy.at(i).length() + 6); i++)
+		{
+			cout << " ";
+		}
+		cout << "Plan Price: " << planPrice.at(i);
+		for (int i = 0; i < 30 - (to_string(planPrice.at(i)).length() + 4); i++)
+		{
+			cout << " ";
+		}
+		cout << "Flight Type: " << flightType.at(i) << endl << endl;
+
+
 	}
+
+	std::cout << "\nPress any key to back ";
+	std::string temp;
+	std::cin >> temp;
+	showManagerPage();
 }
 
 // Yosef work
-// the income function need to edit 
 void Manager::printIncome()
 {
 	int totalPrice = 0;
@@ -152,24 +201,29 @@ void Manager::printIncome()
 	    totalPrice += planPrice.at(j);
 	}
 
-	cout << endl << "The total income today is : " << totalPrice << " LE" << endl << endl;
-	cout << "==================================== PHOENIX ====================================";
+	cout << endl << "The total income today is : " << totalPrice << " LE" << endl;
+
+	std::cout << "\nPress any key to back ";
+	std::string temp;
+	std::cin >> temp;
+	showManagerPage();
 
 }  
 
 void Manager::printReservedSeats()
 {
-	int totalSeats = reservedSeats.size();
+	int totalSeats = seatsPosition.size();
 	cout << endl << "The Number Of Reserved Chairs Is: " << endl << endl;
-	for (int i = 0; i < reservedSeats.size(); i++)
+	for (int i = 0; i < seatsPosition.size(); i++)
 	{
-		cout << "seat number : " << reservedSeats.at(i) << endl;
+		cout << "seat number : " << seatsPosition.at(i) << endl;
 	}
 	cout << endl << "The Number Of Reserved Chairs For Today Is :  " << totalSeats << "  Seats" << endl;
 	cout << "\n==================================== PHOENIX ====================================\n\n";
 
-	// cout << "The Number Of Reserved Chairs For Today Is :\t" << seatsNum << "\n";
-	// cout << "\n==================================== PHOENIX ====================================\n\n";
-
+	std::cout << "\nPress any key to back ";
+	std::string temp;
+	std::cin >> temp;
+	showManagerPage();
 
 }
