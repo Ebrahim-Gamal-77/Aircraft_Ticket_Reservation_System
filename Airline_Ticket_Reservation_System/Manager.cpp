@@ -137,7 +137,9 @@ void Manager::PrintAllData()
 		cout << "\n==================================== PHOENIX ====================================\n";
 	}
 }
-	// Yosef work
+
+// Yosef work
+// the income function need to edit 
 void Manager::printIncome()
 {
 	int totalPrice = 0;
@@ -171,5 +173,3 @@ void Manager::printReservedSeats()
 
 
 }
-
-
