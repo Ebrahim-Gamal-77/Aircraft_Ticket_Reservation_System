@@ -48,7 +48,7 @@ void Manager::showManagerPage() {
 		switch (choice)
 		{
 		case 1:
-			PrintAllData();
+			printAllData();
 			break;
 		case 2:
 			printIncome();
@@ -133,51 +133,48 @@ showManagerPage();
 }
 
 // Ahmed work
-void Manager::PrintAllData()
+void Manager::printAllData()
 {
 
 	// I have a problem here with spaces formatting ... The program gives me a runtime error even my logic is correct
 	for (int i = 0; i < name.size(); i++) {
 		cout << "Client #" << i + 1 << endl;
 
-		cout << "Name: " << name.at(i);
-		// Example for the error
-		// <-------------------->
-		for (int i = 0; i < 25 - (name.at(i).length() + 5); i++)
+		cout << "|Name: " << name.at(i) << '|';
+		for (int j = 0; j < 38 - name.at(i).length(); j++)
 		{
 			cout << " ";
 		}
-		// <-------------------->
-		cout << "ID: " << id.at(i);
-		for (int i = 0; i < 25 - (id.at(i).length() + 4); i++)
+		cout << "|ID: " << id.at(i) << '|';
+		for (int j = 0; j < 25 - id.at(i).length(); j++)
 		{
 			cout << " ";
 		}
-		cout << "Phone Number: " << phoneNum.at(i) << endl;
+		cout << "|Phone Number: " << phoneNum.at(i) << endl;
 
-		cout << "From: " << fromCountry.at(i);
-		for (int i = 0; i < 25 - (fromCountry.at(i).length() + 6); i++)
+		cout << "|From: " << fromCountry.at(i) << '|';
+		for (int j = 0; j < 38 - fromCountry.at(i).length(); j++)
 		{
 			cout << " ";
 		}
-		cout << "To: " << toCountry.at(i);
-		for (int i = 0; i < 25 - (toCountry.at(i).length() + 4); i++)
+		cout << "|To: " << toCountry.at(i) << '|';
+		for (int j = 0; j < 25 - toCountry.at(i).length(); j++)
 		{
 			cout << " ";
 		}
-		cout << "Flight Type: " << flightType.at(i) << endl;
+		cout << "|Flight Type: " << flightType.at(i) << '|' << endl;
 
-		cout << "Plan Economy: " << planEconomy.at(i);
-		for (int i = 0; i < 35 - (planEconomy.at(i).length() + 6); i++)
+		cout << "|Plan Economy: " << planEconomy.at(i) << '|';
+		for (int j = 0; j < 30 - planEconomy.at(i).length(); j++)
 		{
 			cout << " ";
 		}
-		cout << "Plan Price: " << planPrice.at(i);
-		for (int i = 0; i < 30 - (to_string(planPrice.at(i)).length() + 4); i++)
+		cout << "|Plan Price: " << planPrice.at(i) << '|';
+		for (int j = 0; j < 17 - to_string(planPrice.at(i)).length(); j++)
 		{
 			cout << " ";
 		}
-		cout << "Flight Type: " << flightType.at(i) << endl << endl;
+		cout << "|Flight Type: " << flightType.at(i) << '|' << endl << endl;
 
 
 	}

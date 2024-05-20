@@ -12,7 +12,7 @@ public:
 private:
 	void showManagerPage();
 	void printClientData(int clientIndex);
-	void PrintAllData();
+	void printAllData();
 	void printIncome();
 	void printReservedSeats();
 	void searchForClient();
