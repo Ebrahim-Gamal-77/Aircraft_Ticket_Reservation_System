@@ -150,7 +150,7 @@ void Manager::printAllData()
 		{
 			cout << " ";
 		}
-		cout << "|Phone Number: " << phoneNum.at(i) << endl;
+		cout << "|Phone Number: " << phoneNum.at(i) << '|' << endl;
 
 		cout << "|From: " << fromCountry.at(i) << '|';
 		for (int j = 0; j < 38 - fromCountry.at(i).length(); j++)
