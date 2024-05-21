@@ -4,10 +4,9 @@
 #include <string>
 using namespace std;
 
-
+// Constructors
 Manager::Manager() {}
 
-// Ebrahim work
 Manager::Manager(bool showData) {
 
 	int password;
@@ -34,6 +33,7 @@ Manager::Manager(bool showData) {
 
 }
 
+// Functions
 void Manager::showManagerPage() {
 
 	std::cout << "================================ PHOENIX MANAGER ================================\n\n";
@@ -105,10 +105,7 @@ void Manager::searchForClient()
 		}
 	} while (searchedName != "-1" && !isNameFound);
 
-
-
-
-
+	
 }
 
 void Manager::printClientData(int clientIndex) {
@@ -132,7 +129,6 @@ showManagerPage();
 
 }
 
-// Ahmed work
 void Manager::printAllData()
 {
 
@@ -174,7 +170,7 @@ void Manager::printAllData()
 		{
 			cout << " ";
 		}
-		cout << "|Flight Type: " << flightType.at(i) << '|' << endl << endl;
+		cout << "|Seat Position: " << seatsPosition.at(i) << '|' << endl << endl;
 
 
 	}
@@ -185,20 +181,37 @@ void Manager::printAllData()
 	showManagerPage();
 }
 
-// Yosef work
 void Manager::printIncome()
 {
 	int totalPrice = 0;
 
-	cout << "|          Name               |          Price               |" << endl << endl;
-	for (int j = 0; j < name.size(); j++)
+	cout << "------------------------------------------------------\n"; 
+	cout << "|          Name            |          Price          |\n";
+	cout << "------------------------------------------------------\n";
+	for (int i = 0; i < planPrice.size(); i++)
 	{
-	    cout << "|   " << name.at(j) << "               " << "|   " << planPrice.at(j) << "               " << endl;
+		cout << "|          " << name.at(i);
+		for (int j = 0; j < 16 - name.at(i).length(); j++)
+		{
+			cout << ' ';
+		}
+		cout << "|          " << planPrice.at(i);
+		for (int j = 0; j < 15 - to_string(planPrice.at(i)).length(); j++)
+		{
+			cout << ' ';
+		}
+		cout << '|' << endl;
 	
-	    totalPrice += planPrice.at(j);
+	    totalPrice += planPrice.at(i);
 	}
-
-	cout << endl << "The total income today is : " << totalPrice << " LE" << endl;
+	cout << "------------------------------------------------------\n";
+	cout << "|       Total Income       |          " << totalPrice;
+	for (int j = 0; j < 15 - to_string(totalPrice).length(); j++)
+	{
+		cout << ' ';
+	}
+	cout << "|\n";
+	cout << "------------------------------------------------------\n";
 
 	std::cout << "\nPress any key to back ";
 	std::string temp;
