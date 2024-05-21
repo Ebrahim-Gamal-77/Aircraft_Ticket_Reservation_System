@@ -99,7 +99,7 @@ void Client::setFromCountry()
     }
     std::cout << std::endl;
     std::cout << "Choose a country : ";
-    static short fromCountryNum;
+    short fromCountryNum;
     std::cin >> fromCountryNum;
     while (fromCountryNum < 1 || fromCountryNum > 10) {
         std::cout << "\nInvalid number!\n";
