@@ -1,6 +1,6 @@
-#pragma once
 #include <iostream>
 #include <vector>
+#include "Client.h"
 class Manager : public Client
 {
 
