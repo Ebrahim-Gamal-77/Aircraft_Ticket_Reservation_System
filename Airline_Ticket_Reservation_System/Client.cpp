@@ -414,7 +414,7 @@ void Client::printTicket() {
     }
     cout << '*' << endl << endl;
     cout << "*  Flight Type : " << flightType.back() << "     " << "Plan Economy: " << planEconomy.back() << "     " << "Plan Price: " << planPrice.back();
-    for (int i = 0; i < 63 - (flightType.back().length() + planEconomy.back().length() + to_string(planPrice.back()).length()); i++)
+    for (int i = 0; i < 60 - (flightType.back().length() + planEconomy.back().length() + to_string(planPrice.back()).length()); i++)
     {
         cout << ' ';
     }
